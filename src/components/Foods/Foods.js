@@ -7,10 +7,11 @@ const Foods = () => {
     const [search, setSearch] = useState("");
     useEffect(() => {
         fetch(
-          `https://www.themealdb.com/api/json/v1/1/search.php?f=${search}`
+          `https://www.themealdb.com/api/json/v1/1/search.php?s=${search}`
         )
           .then((res) => res.json())
           .then((data) => {
+            console.log(data.meals)
             setFoods(data.meals);
           });
       }, [search]);

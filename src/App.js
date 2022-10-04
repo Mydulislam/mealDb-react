@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
 import About from './components/About/About';
+import Categories from './components/Categories/Categories';
 import Contact from './components/Contact/Contact';
 import DetailsProduct from './components/DetailsProduct/DetailsProduct';
 import Foods from './components/Foods/Foods';
@@ -19,13 +20,21 @@ function App() {
       loader: ()=>{
         return fetch('https://www.themealdb.com/api/json/v1/1/search.php?f=b')
       },
-       element:<Foods></Foods>},
+       element:<Foods></Foods>
+      },
        {
         path:'/food/:foodId',
         loader:({params})=>{
           return fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${params.foodId}`)
         },
         element:<DetailsProduct></DetailsProduct>
+       },
+       {
+        path:'/categories',
+        loader: ()=>{
+          return fetch('https://www.themealdb.com/api/json/v1/1/categories.php')
+        },
+        element: <Categories></Categories>
        },
       {path: '/contact', element:<Contact></Contact>},
     ]
