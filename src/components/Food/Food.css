@@ -1,0 +1,27 @@
+.food-area{
+    border: 1px solid bisque;
+    padding: 10px 15px;
+    border-radius: 15px;
+    background-color: #fbf8f5;
+}
+.food-area img{
+    max-width: 100%;
+    border-radius: 15px;
+}
+.food-area button{
+    padding: 10px;
+    width: 100%;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: bisque;
+    border: none;
+    border-radius: 5px;
+    color: black;
+}
+h1,h2,h3,h4,h5,h6{
+    margin: 15px 0;
+}
+h4{
+    font-weight: 500;
+}
